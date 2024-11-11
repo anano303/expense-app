@@ -1,0 +1,16 @@
+[
+  {
+    "id": 2,
+    "category": "ani",
+    "price": "100",
+    "date": "2024-11-11T20:45:00.195Z",
+    "description": "kargia"
+  },
+  {
+    "id": 3,
+    "category": "ხილი",
+    "price": "200",
+    "date": "2024-11-11T20:45:51.154Z",
+    "description": "მსხალი"
+  }
+]
