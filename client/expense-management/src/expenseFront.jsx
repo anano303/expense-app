@@ -10,19 +10,25 @@ function ExpenseFront() {
     description: "",
   });
   const [editExpense, setEditExpense] = useState(null);
+  const [error, setError] = useState("");
+  const [page, setPage] = useState(1); // Current page state
+  const [hasMorePages, setHasMorePages] = useState(false); // Check if more pages exist
 
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/expenses");
+        const response = await axios.get(
+          `http://localhost:5001/api/expenses?page=${page}&limit=5`
+        );
         setExpenses(response.data);
+        setHasMorePages(response.data.length === 5); // If data length is 5, it might have more pages
       } catch (error) {
-        console.error("Error fetching expenses:", error);
+        setError("Error fetching expenses");
       }
     };
 
     fetchExpenses();
-  }, []);
+  }, [page]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,10 +41,17 @@ function ExpenseFront() {
         "http://localhost:5001/api/expenses",
         newExpense
       );
-      setExpenses([...expenses, response.data]);
       setNewExpense({ category: "", price: "", description: "" });
+      setError("");
+
+      // Check if current page already has 5 expenses and move to the next page
+      if (expenses.length >= 5) {
+        setPage((prevPage) => prevPage + 1);
+      } else {
+        setExpenses([...expenses, response.data]);
+      }
     } catch (error) {
-      console.error("Error adding expense:", error);
+      setError(error.response?.data?.error || "Error adding expense");
     }
   };
 
@@ -48,8 +61,9 @@ function ExpenseFront() {
         headers: { key: process.env.REACT_APP_SECRET_KEY },
       });
       setExpenses(expenses.filter((expense) => expense.id !== id));
+      setError("");
     } catch (error) {
-      console.error("Error deleting expense:", error);
+      setError("Error deleting expense");
     }
   };
 
@@ -75,9 +89,18 @@ function ExpenseFront() {
       );
       setEditExpense(null);
       setNewExpense({ category: "", price: "", description: "" });
+      setError("");
     } catch (error) {
-      console.error("Error updating expense:", error);
+      setError("Error updating expense");
     }
+  };
+
+  const handleNextPage = () => {
+    if (hasMorePages) setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    if (page > 1) setPage((prevPage) => prevPage - 1);
   };
 
   return (
@@ -112,12 +135,17 @@ function ExpenseFront() {
         )}
       </div>
 
+      {/* Error message */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
       <ul>
         {expenses.map((expense) => (
           <li key={expense.id}>
             <div>
               <p>{expense.category}</p>
+              <hr />
               <p>{expense.price}</p>
+              <hr />
               <p>{expense.description}</p>
             </div>
             <button onClick={() => handleEditExpense(expense)}>Edit</button>
@@ -127,6 +155,17 @@ function ExpenseFront() {
           </li>
         ))}
       </ul>
+
+      {/* Pagination Controls */}
+      <div className="pagination">
+        <button onClick={handlePreviousPage} disabled={page === 1}>
+          Previous
+        </button>
+        <span>Page {page}</span>
+        <button onClick={handleNextPage} disabled={!hasMorePages}>
+          Next
+        </button>
+      </div>
     </div>
   );
 }
