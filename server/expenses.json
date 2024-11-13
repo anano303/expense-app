@@ -1,12 +1,5 @@
 [
   {
-    "id": 4,
-    "category": "ბოსტნეული",
-    "price": "20",
-    "date": "2024-11-11T21:39:59.206Z",
-    "description": "სტაფილო"
-  },
-  {
     "id": 5,
     "category": "ბოსტნეული",
     "price": "50",
@@ -39,5 +32,12 @@
     "category": "მანქანები",
     "price": "10000",
     "description": "პორშე"
+  },
+  {
+    "id": 10,
+    "category": "cars",
+    "price": "20000",
+    "date": "2024-11-12T10:46:01.715Z",
+    "description": "Mercedes"
   }
 ]
