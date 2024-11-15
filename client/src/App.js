@@ -1,10 +1,10 @@
 import React from "react";
-import { AuthProvider } from "./AuthContext";
-import ExpenseFront from "./ExpenseFront";
-import AdminPage from "./AdminPage";
+import { AuthProvider } from "./Hooks/AuthContext";
+import ExpenseFront from "./Pages/Expense/ExpenseFront";
+import AdminPage from "./AdminPanel/AdminPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AdminDashboard from "./AdminDashboard";
-import AdminRoute from "./AdminRoute";
+import AdminDashboard from "./AdminPanel/AdminDashboard";
+import AdminRoute from "./AdminPanel/AdminRoute";
 
 function App() {
   return (

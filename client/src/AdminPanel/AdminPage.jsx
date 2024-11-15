@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "./AuthContext"; // AuthContext-ის შემოტანა
+import { useAuth } from "../Hooks/AuthContext"; // AuthContext-ის შემოტანა
 import { useNavigate } from "react-router-dom"; // სტრუქტურაში გადასვლა
 import axios from "axios";
 

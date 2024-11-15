@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate ჰუკი
-import ExpenseFront from "./ExpenseFront";
-import { useAuth } from "./AuthContext";
+import ExpenseFront from "../Pages/Expense/ExpenseFront";
+import { useAuth } from "../Hooks/AuthContext";
 import "./adminDashboard.css";
 
 function AdminDashboard() {

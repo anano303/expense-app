@@ -179,7 +179,7 @@ function ExpenseFront({ isAdminView = false }) {
             ) : (
               <div>
                 <p>{expense.category}</p>
-                <p>{expense.price}</p>
+                <p>{expense.price} ₾ </p>
                 <p>{expense.description}</p>
                 {isAdminView && (
                   <>
