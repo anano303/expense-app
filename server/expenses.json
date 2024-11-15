@@ -1,37 +1,10 @@
 [
   {
-    "id": 5,
-    "category": "ბოსტნეული",
-    "price": "50",
-    "date": "2024-11-11T21:40:09.361Z",
-    "description": "მარწყვი"
-  },
-  {
-    "id": 6,
-    "category": "ბოსტნეული ",
-    "price": "60",
-    "date": "2024-11-11T21:40:20.136Z",
-    "description": "კომბოსტო"
-  },
-  {
-    "id": 7,
-    "category": "ბოსტნეული",
-    "price": "20",
-    "date": "2024-11-11T21:41:11.748Z",
-    "description": "წიწაკა"
-  },
-  {
     "id": 8,
     "category": "manqanebi",
-    "price": "5000",
+    "price": "5002",
     "date": "2024-11-11T21:57:11.383Z",
     "description": "tesla"
-  },
-  {
-    "id": 9,
-    "category": "მანქანები",
-    "price": "10000",
-    "description": "პორშე"
   },
   {
     "id": 10,
@@ -39,5 +12,26 @@
     "price": "20000",
     "date": "2024-11-12T10:46:01.715Z",
     "description": "Mercedes"
+  },
+  {
+    "id": 11,
+    "category": "jjj",
+    "price": "120",
+    "description": "gygvgh",
+    "date": "2024-11-15T20:14:37.375Z"
+  },
+  {
+    "id": 13,
+    "category": "ანი",
+    "price": "50",
+    "description": "ნჯკ",
+    "date": "2024-11-15T21:11:14.469Z"
+  },
+  {
+    "id": 14,
+    "category": "უკი",
+    "price": "300",
+    "description": "ჰუჰუ",
+    "date": "2024-11-15T21:11:26.865Z"
   }
 ]
