@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Router } = require("express");
 const jwt = require("jsonwebtoken");
 const sha256 = require("js-sha256");
-const { readUsers } = require("../../../fileHandler");
+const { readUsers } = require("../../../../fileHandler");
 
 const userRoutes = Router();
 
