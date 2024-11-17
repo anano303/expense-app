@@ -11,9 +11,12 @@ function AdminPage() {
 
   const login = async (password) => {
     try {
-      const { data } = await axios.post("http://localhost:5001/api/login", {
-        password,
-      });
+      const { data } = await axios.post(
+        "http://localhost:5001/api/users/login",
+        {
+          password,
+        }
+      );
       localStorage.setItem("token", data.token);
       return true;
     } catch (e) {
