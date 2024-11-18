@@ -22,16 +22,16 @@
   },
   {
     "id": 13,
-    "category": "ანი",
+    "category": "ხილი",
     "price": "50",
-    "description": "ნჯკ",
+    "description": "ალუბალი",
     "date": "2024-11-15T21:11:14.469Z"
   },
   {
     "id": 14,
-    "category": "უკი",
+    "category": "ხილი",
     "price": "300",
-    "description": "ჰუჰუ",
+    "description": "ბალი",
     "date": "2024-11-15T21:11:26.865Z"
   }
 ]

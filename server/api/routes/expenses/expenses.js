@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { authenticateToken, authorizeAdmin } = require("../../middleware/auth");
-const { readExpenses, writeExpenses } = require("../../../../fileHandler");
+
 const {
   getExpenses,
   addExpenses,
@@ -12,7 +12,7 @@ const expenseRoutes = Router();
 
 expenseRoutes.get("/", getExpenses);
 expenseRoutes.post("/", authenticateToken, authorizeAdmin, addExpenses);
-expenseRoutes.put("/:id", authenticateToken, authorizeAdmin, updatedExpense);
+expenseRoutes.put("/:id", authenticateToken, updatedExpense);
 expenseRoutes.delete("/:id", authenticateToken, authorizeAdmin, deleteExpense);
 
 module.exports = expenseRoutes;
